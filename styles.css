@@ -1,0 +1,35 @@
+* {
+  font-family: sans-serif;
+}
+
+body {
+  background-color: CadetBlue;
+}
+
+h1, h3 {
+  font-weight: normal;
+  text-align: center;
+}
+
+.music-player {
+  display: block;
+  margin: auto;
+  width: 75vw;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-textbox {
+  height: 40px;
+  width: 50vw;
+}
+
+button.submit-button {
+  height: 40px;
+  margin-left: 5px;
+  width: 20vw;
+}

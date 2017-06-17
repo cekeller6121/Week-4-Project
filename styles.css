@@ -1,14 +1,50 @@
 * {
   font-family: sans-serif;
+  margin: 0;
 }
 
 body {
-  background-color: CadetBlue;
+  background-color: rgba(211, 211, 211, 0.75);
 }
 
 h1, h3 {
+  background-color: rgba(42, 37, 191, 0.75);
+  border-radius: 5px;
+  color: Black;
   font-weight: normal;
   text-align: center;
+  width: 100%;
+}
+
+h1 {
+  font-size: 40px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+h3 {
+  color: White;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+header {
+  align-items: center;
+  background-image: url('DJ Header Pic.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+}
+
+header img {
+  filter: blur(2.5px);
+}
+
+section.player {
+  margin-top: 20px;
 }
 
 .music-player {
@@ -21,15 +57,56 @@ h1, h3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.search-textbox {
+#search-textbox {
+  color: Black;
+  font-family: 'Gill Sans';
+  font-size: 24px;
   height: 40px;
   width: 50vw;
 }
 
-button.submit-button {
+button#submit-button {
+  border-radius: 10px;
+  font-size: 20px;
   height: 40px;
   margin-left: 5px;
-  width: 20vw;
+  width: 15vw;
+}
+
+button#submit-button:hover {
+  background-color: rgba(12, 23, 221, 0.5);
+}
+
+#results {
+  display: grid;
+  grid-template-columns: 33.333% 33.333% 33.333%;
+}
+
+.JS-results ul {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.JS-results li {
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  text-align: center;
+}
+
+footer {
+  background-image: url('Footer Background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background-color: Black;*/
+  bottom: 0;
+  color: White;
+  height: 150px;
+  padding-top: 20px;
+  position: relative;
+  text-align: center;
+  width: 100%;
 }

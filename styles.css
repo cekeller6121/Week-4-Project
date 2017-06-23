@@ -1,17 +1,17 @@
 * {
-  font-family: sans-serif;
   margin: 0;
 }
 
 body {
-  background-color: rgba(211, 211, 211, 0.75);
+  background: -webkit-linear-gradient(to right, #403b4a, #e7e9bb);
+  background: linear-gradient(to right, #403b4a, #e7e9bb);
 }
 
 h1, h3 {
   background-color: rgba(42, 37, 191, 0.75);
   border-radius: 5px;
   color: Black;
-  font-weight: normal;
+  font-family: 'Roboto';
   text-align: center;
   width: 100%;
 }
@@ -47,7 +47,26 @@ section.player {
   margin-top: 20px;
 }
 
-.music-player {
+audio {
+  box-shadow: 5px 5px 5px Gray;
+}
+
+marquee {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: CadetBlue;
+  display: block;
+  font-family: 'Roboto';
+  font-size: 18px;
+  height: 20px;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 75vw;
+}
+
+#music-player {
+  color: Green;
   display: block;
   margin: auto;
   width: 75vw;
@@ -71,19 +90,44 @@ section.player {
 
 button#submit-button {
   border-radius: 10px;
+  font-family: 'Gloria Hallelujah';
   font-size: 20px;
-  height: 40px;
+  height: 45px;
+  letter-spacing: 1px;
   margin-left: 5px;
   width: 15vw;
 }
 
 button#submit-button:hover {
   background-color: rgba(12, 23, 221, 0.5);
+  box-shadow: 5px 5px 5px Black;
+}
+
+.searchTitleMarkup span {
+  color: White;
+  font-family: 'Josefin Sans';
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.searchTitleMarkup hr {
+  border-color: Black;
+}
+
+.result-box {
+  border-radius: 10px;
+  background-color: LightGray;
 }
 
 #results {
   display: grid;
   grid-template-columns: 33.333% 33.333% 33.333%;
+}
+
+.JS-results img {
+  border-radius: 50%;
+  height: 15vw;
+  width: 15vw;
 }
 
 .JS-results ul {
@@ -92,21 +136,13 @@ button#submit-button:hover {
 }
 
 .JS-results li {
+  font-family: 'Josefin Sans';
   padding-top: 2.5px;
   padding-bottom: 2.5px;
   text-align: center;
 }
 
-footer {
-  background-image: url('Footer Background.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  /*background-color: Black;*/
-  bottom: 0;
-  color: White;
-  height: 150px;
-  padding-top: 20px;
-  position: relative;
-  text-align: center;
-  width: 100%;
+.JS-results li a {
+  color: Black;
+  font-size: 18px;
 }

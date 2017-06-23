@@ -1,26 +1,17 @@
 
 
+// ?client_id=86b6a66bb2d863f5d64dd8a91cd8de94
+// ^ Client ID needed in order to stream tracks
+
 console.log("JavaScript file connected");
 console.log("Hello, Clement");
-
-/*
-  Here is a guide for the steps you could take:
-*/
-
-// 1. First select and store the elements you'll be working with
 
 var submit_button = document.getElementById('submit-button');
 var searchResults = "";
 
-// 2. Create your `onSubmit` event for getting the user's search term
-
-
-submit_button.addEventListener('click', function getResults() {
-  searchResults = document.getElementById('search-textbox').value;
-})
-
-
-// 3. Create your `fetch` request that is called after a submission
+submit_button.addEventListener('click', function getResults() { //Listens for the submit button and stores the text
+  searchResults = document.getElementById('search-textbox').value; // entry in the variable searchResults.
+});
 
 submit_button.addEventListener('click', function acquireMusic() {
   fetch('https://api.soundcloud.com/tracks/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94&q=' + searchResults)
@@ -35,9 +26,10 @@ submit_button.addEventListener('click', function acquireMusic() {
     }
     console.log(searchResults);
 
-response.json().then(function(data){
+response.json().then(function(data){ // Variables set below pull in data from the API. The bottom one
+                                     // concatenates the stream url with the client id needed to play the song.
+  for (var i = 0; i < data.length && i < 36; i++) {
 
-  for (var i = 0; i < 30; i++) {
     var artistName = data[i].user.username;
     console.log(artistName);
     var artistPic = data[i].user.avatar_url;
@@ -48,14 +40,17 @@ response.json().then(function(data){
     console.log(songTitle);
     var songUrl = data[i].permalink_url;
     console.log(songUrl);
+    var streamUrl = data[i].stream_url + "/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94";
+    console.log(streamUrl);
 
   let htmlMarkup = `
   <div class="JS-results">
     <ul>
-      <li><img src="${artistPic}"></li>
-      <li><a href="${songUrl}" target="_blank">${songTitle}</a></li>
+    <div class="result-box">
+      <li><img src="${artistPic}" alt="${artistName} Album Artwork" title="${artistName} Album Artwork"></li>
+      <li><a class="song_title" href="${streamUrl}" id="${artistName}" name="${songTitle}">${songTitle}</a></li>
       <li><span><a href="${artistUrl}" target="_blank">${artistName}</a></span></li>
-
+    </div>
     </ul>
   </div>`
 
@@ -63,7 +58,7 @@ response.json().then(function(data){
 };
 
   let htmlMarkupSearchResults = `
-    <div>
+    <div class="searchTitleMarkup">
     <br>
     <br>
     <hr>
@@ -75,11 +70,36 @@ response.json().then(function(data){
 
   document.getElementById('search-results').innerHTML = htmlMarkupSearchResults;
 
+  songTitleArray = document.getElementsByClassName('song_title') // Loops over the results and listens for click
+    for (s = 0; s < songTitleArray.length; s++) {
+      songTitleArray[s].addEventListener('click', function getTrackToPlay(e) {
+        console.log("Track clicked, let's play...");
+        e.preventDefault(); // Prevents the page from redirecting to play the file when clicked
+        var clickedSong = e.target.getAttribute('href'); // Targets only the link to be passed into the variable
+        console.log(clickedSong);
+        var clickedSongName = e.target.getAttribute('name');
+        console.log(clickedSongName);
+        var clickedSongArtist = e.target.getAttribute('id');
+        console.log(clickedSongArtist);
 
-  });
+        let weGotIt = `
+        <audio id="music-player" controls="controls" src="${clickedSong}" autoplay></audio>
+        <marquee behavior="scroll" direction="left">${clickedSongName} ~ ${clickedSongArtist}</marquee>`
+
+        document.getElementById('player').innerHTML = weGotIt; // Replaces the empty audio element
+      });
+  };
+
+});
 })});
 
-// 4. Create a way to append the fetch results to your page
 
 
-// 5. Create a way to listen for a click that will play the song in the audio play
+
+
+
+
+
+
+
+// *** Intentional white space ***

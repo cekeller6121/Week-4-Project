@@ -119,6 +119,11 @@ button#submit-button:hover {
   background-color: LightGray;
 }
 
+.result-box:hover {
+  background-color: inherit;
+  border-radius: 35%;
+}
+
 #results {
   display: grid;
   grid-template-columns: 33.333% 33.333% 33.333%;

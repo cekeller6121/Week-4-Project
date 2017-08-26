@@ -7,13 +7,24 @@ console.log("JavaScript file connected");
 console.log("Hello, Clement");
 
 var submit_button = document.getElementById('submit-button');
+var search_textbox = document.getElementById('search-textbox');
 var searchResults = "";
 
-submit_button.addEventListener('click', function getResults() { //Listens for the submit button and stores the text
-  searchResults = document.getElementById('search-textbox').value; // entry in the variable searchResults.
+submit_button.addEventListener('click', function submitButton() {
+    searchResults = document.getElementById('search-textbox').value;
+    acquireMusic(searchResults);
 });
 
-submit_button.addEventListener('click', function acquireMusic() {
+search_textbox.addEventListener('keydown', function enterKey(e) {
+  var key = e.keyCode;
+  if (key === 13) {
+    searchResults = document.getElementById('search-textbox').value;
+    acquireMusic(searchResults);
+  };
+});
+
+function acquireMusic(e) {
+  searchResults = document.getElementById('search-textbox').value;
   fetch('https://api.soundcloud.com/tracks/?client_id=86b6a66bb2d863f5d64dd8a91cd8de94&q=' + searchResults)
     .then(
       function(response) {
@@ -91,7 +102,7 @@ response.json().then(function(data){ // Variables set below pull in data from th
   };
 
 });
-})});
+})};
 
 
 

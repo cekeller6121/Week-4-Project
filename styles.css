@@ -17,14 +17,7 @@ h1, h3 {
 }
 
 h1 {
-  font-size: 40px;
-  padding-top: 10px;
-  text-align: center;
-}
-
-h3 {
-  color: White;
-  padding-bottom: 10px;
+  padding: 2%;
   text-align: center;
 }
 
@@ -36,7 +29,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 300px;
+  height: 25vw;
 }
 
 header img {
@@ -44,7 +37,7 @@ header img {
 }
 
 section.player {
-  margin-top: 20px;
+  margin-top: 5%;
 }
 
 audio {
@@ -58,10 +51,7 @@ marquee {
   display: block;
   font-family: 'Roboto';
   font-size: 18px;
-  height: 20px;
-  margin-top: 10px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 2% auto 2% auto;
   width: 75vw;
 }
 
@@ -76,23 +66,21 @@ marquee {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 
 #search-textbox {
+  border-radius: 5px;
   color: Black;
   font-family: 'Gill Sans';
   font-size: 24px;
-  height: 40px;
   width: 50vw;
 }
 
 button#submit-button {
   border-radius: 10px;
   font-family: 'Gloria Hallelujah';
-  font-size: 20px;
-  height: 45px;
   letter-spacing: 1px;
   margin-left: 5px;
   width: 15vw;
@@ -107,7 +95,7 @@ button#submit-button:hover {
   color: White;
   font-family: 'Josefin Sans';
   font-size: 20px;
-  margin-left: 15px;
+  margin-left: 3%;
 }
 
 .searchTitleMarkup hr {
@@ -121,7 +109,6 @@ button#submit-button:hover {
 
 .result-box:hover {
   background-color: inherit;
-  border-radius: 35%;
 }
 
 #results {
@@ -137,17 +124,21 @@ button#submit-button:hover {
 
 .JS-results ul {
   list-style: none;
-  margin-bottom: 20px;
+  margin-bottom: 2%;
 }
 
 .JS-results li {
   font-family: 'Josefin Sans';
-  padding-top: 2.5px;
-  padding-bottom: 2.5px;
+  padding-top: 1%;
+  padding-bottom: 1%;
   text-align: center;
 }
 
 .JS-results li a {
   color: Black;
   font-size: 18px;
+}
+
+footer {
+  text-align: center;
 }

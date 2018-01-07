@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  /* margin: 0; */
 }
 
 body {
@@ -7,13 +7,12 @@ body {
   background: linear-gradient(to right, #403b4a, #e7e9bb);
 }
 
-h1, h3 {
+h1 {
   background-color: rgba(42, 37, 191, 0.75);
   border-radius: 5px;
   color: Black;
   font-family: 'Roboto';
   text-align: center;
-  width: 100%;
 }
 
 h1 {
@@ -52,14 +51,14 @@ marquee {
   font-family: 'Roboto';
   font-size: 18px;
   margin: 2% auto 2% auto;
-  width: 75vw;
+  width: 75%;
 }
 
 #music-player {
   color: Green;
   display: block;
   margin: auto;
-  width: 75vw;
+  width: 75%;
 }
 
 .search-form {
@@ -82,8 +81,7 @@ button#submit-button {
   border-radius: 10px;
   font-family: 'Gloria Hallelujah';
   letter-spacing: 1px;
-  margin-left: 5px;
-  width: 15vw;
+  margin-left: 1%;
 }
 
 button#submit-button:hover {
@@ -136,7 +134,7 @@ button#submit-button:hover {
 
 .JS-results li a {
   color: Black;
-  font-size: 18px;
+  /* font-size: 18px; */
 }
 
 footer {

@@ -131,14 +131,14 @@ button#submit-button:hover {
 
 .JS-results li {
   font-family: 'Josefin Sans';
-  padding-top: 1%;
-  padding-bottom: 1%;
+  /* padding-top: 1%;
+  padding-bottom: 1%; */
   text-align: center;
+  word-wrap:break-word;
 }
 
 .JS-results li a {
   color: Black;
-  /* font-size: 18px; */
 }
 
 footer {

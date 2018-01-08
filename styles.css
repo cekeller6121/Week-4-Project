@@ -102,7 +102,8 @@ button#submit-button:hover {
 
 .result-box {
   border-radius: 10px;
-  background-color: LightGray;
+  /* background-color: LightGray; */
+  background-color: rgba(115, 114, 101, 0.5);
 }
 
 .result-box:hover {

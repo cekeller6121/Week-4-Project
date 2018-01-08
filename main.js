@@ -56,13 +56,13 @@ response.json().then(function(data){ // Variables set below pull in data from th
 
   let htmlMarkup = `
   <div class="JS-results">
-    <ul>
     <div class="result-box">
+    <ul>
       <li><img src="${artistPic}" alt="${artistName} Album Artwork" title="${artistName} Album Artwork"></li>
       <li><a class="song_title" href="${streamUrl}" id="${artistName}" name="${songTitle}">${songTitle}</a></li>
       <li><span><a href="${artistUrl}" target="_blank">${artistName}</a></span></li>
-    </div>
     </ul>
+    </div>
   </div>`
 
   document.getElementById('results').innerHTML += htmlMarkup;

@@ -114,13 +114,16 @@ button#submit-button:hover {
   grid-template-columns: 33.333% 33.333% 33.333%;
 }
 
+.JS-results {
+  margin: 2%;
+}
+
 .JS-results img {
   border-radius: 50%;
 }
 
 .JS-results ul {
   list-style: none;
-  margin-bottom: 2%;
 }
 
 .JS-results li {

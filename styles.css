@@ -120,6 +120,8 @@ button#submit-button:hover {
 
 .JS-results img {
   border-radius: 50%;
+  height: 50%;
+  width: 50%;
 }
 
 .JS-results ul {
